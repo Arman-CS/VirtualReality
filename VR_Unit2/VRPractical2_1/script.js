@@ -12,6 +12,18 @@ window.addEventListener("DOMContentLoaded",function() {
     let z = rnd(-20,20);
     createTree(x,0,z);
   }
+  for (let i = 0; i < 100; i++){
+    let x = rnd(-20,20);
+    let y = (8,12);
+    let z = rnd(-20,20);
+    createCloud(x,y,z);
+  }
+   for (let i = 0; i < 100; i++){
+    let x = rnd(-20,20);
+    let z = rnd(-20,20);
+    createHouse(x,0,z);
+  }
+
    //Task 2: Use the createCloud(...)  to add several clouds to the scene at various positions.
 
    //Task 4: Use the createHouse(...)  to add several houses to the scene at various positions.
@@ -35,6 +47,43 @@ window.addEventListener("DOMContentLoaded",function() {
       5) Set house entities position to those passed in to the function.
       6) Add the house entity to the scene
 */
+function createCloud(x, y, z){
+  let cloud1 = document.createElement("a-sphere");
+  let cloud2 = document.createElement("a-sphere");
+  let cloud3 = document.createElement("a-sphere");
+  let cloud = document.createElement("a-entity");
+  cloud1.setAttribute("position" , "1 0 0");
+  cloud2.setAttribute("position" , "0 0 1");
+  cloud3.setAttribute("position" , "0 0 0");
+  cloud.append(cloud1);
+  cloud.append(cloud2);
+  cloud.append(cloud3);
+  cloud.setAttribute("position" , {x:x , y:y , z:z});
+  scene.append(cloud);
+}
+
+function createHouse(x , y , z){
+  let base = document.createElement("a-box");
+  let roof = document.createElement("a-cylinder");
+  let house = document.createElement("a-entity");
+  roof.setAttribute("position" , "0 2.20 0");
+  base.setAttribute("position" , "0 1 0");
+  base.setAttribute("depth" , "1.5");
+  base.setAttribute("height" , "1.5");
+  base.setAttribute("width" , "1.5");
+  base.setAttribute("color" , "red");
+  roof.setAttribute("segments-radical" , "3");
+  roof.setAttribute("radius" , ".9");
+  roof.setAttribute("color" , "red");
+  roof.setAttribute("rotation" , "90 0 0");
+  roof.setAttribute("rotation" , "-90 0 180");
+  house.append(roof);
+  house.append(base);
+  house.setAttribute("position" , {x:x , y:y , z:z});
+  scene.append(house);
+}
+
+
 function createTree(x, y, z){
   let tree = document.createElement("a-entity");
   
