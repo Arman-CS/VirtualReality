@@ -74,7 +74,7 @@ function createHouse(x , y , z){
   base.setAttribute("color" , "red");
   roof.setAttribute("segments-radical" , "3");
   roof.setAttribute("radius" , ".9");
-  roof.setAttribute("color" , "red");
+  roof.setAttribute("color" , "brown");
   roof.setAttribute("rotation" , "90 0 0");
   roof.setAttribute("rotation" , "-90 0 180");
   house.append(roof);
