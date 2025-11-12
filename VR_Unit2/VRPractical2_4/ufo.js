@@ -1,5 +1,6 @@
 class Ufo{
     constructor(x,y,z){
+        this.y = y;
         this.obj = document.createElement("a-entity");
         
         let ship = document.createElement("a-cylinder");
@@ -26,6 +27,10 @@ class Ufo{
         console.log(this.obj);
         scene.append(this.obj)
 
+    
+
+
     }
+
 
 }
